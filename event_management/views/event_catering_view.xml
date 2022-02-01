@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--    tree view event catering-->
+    <record id="event_catering_view_tree" model="ir.ui.view">
+        <field name="name">event.catering.tree</field>
+        <field name="model">event.catering</field>
+        <field name="arch" type="xml">
+            <tree string="Channel">
+                <field name="sequence"/>
+                <field name="event"/>
+                <field name="date"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="guests"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!--    action event catering -->
+    <record id="event_catering_action" model="ir.actions.act_window">
+            <field name="name">Catering</field>
+        <field name="res_model">event.catering</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--form view event catering-->
+    <record id="event_catering_view_form" model="ir.ui.view">
+        <field name="name">event.catering.form</field>
+        <field name="model">event.catering</field>
+        <field name="arch" type="xml">
+            <form string="event_catering">
+                <header>   <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,delivered,invoiced,expired"/></header>
+                <sheet>
+                     <div class="oe_title">
+               <h1>
+                      <field name="sequence"  readonly="1"/>
+                </h1>
+             </div>
+                    <group>
+                        <group>
+                            <field name="event"/>
+<!--                        </group>-->
+<!--                        <group>-->
+                            <field name="date"/>
+<!--                        </group>-->
+<!--                        <group>-->
+                            <field name="start_date"/>
+<!--                        </group>-->
+<!--                        <group>-->
+                            <field name="end_date"/>
+<!--                        </group>-->
+<!--                        <group>-->
+                            <field name="guests"/>
+                        </group>
+                        <group>
+                            <group>
+                            <field name="welcome_drink"/>
+<!--                                <field name="welcome_drink" attrs="{'invisible': [('breakfast','=',True)] }"/>-->
+<!--                    </group><group>-->
+                            <field name="breakfast"/>
+<!--                                            </group><group>-->
+
+                            <field name="lunch"/>
+<!--                                            </group><group>-->
+
+                            <field name="dinner"/>
+<!--                                            </group><group>-->
+
+                            <field name="snacks_and_drinks"/>
+<!--                                            </group><group>-->
+
+                            <field name="beverages"/>
+                        </group>
+                        <group>
+
+                        </group>
+                    </group>
+                    </group>
+<notebook>
+<!--    <page string="welcome drink"></page>-->
+    <page string="Welcome Drink" attrs="{'invisible': [('welcome_drink','=',False)] }">
+<!--<page string="Page String">-->
+                    <field name="notebook_ids">
+                        <tree string="Tree String">
+                            <field name="items" domain="[{'welcome_drink','!=',''}]"></field>
+<!--                            <field name="items" domain="['|',('welcome_drink','=','')]"/>-->
+<!--                            ('relation_eligibility','=','both')]"/>-->
+                            <field name="description"/>
+                                    <field name="quantity"/>
+                            <field name="uom" ></field>
+                                    <field name="unit_price"/>
+            <!--                <field name="sub_total"/>-->
+                                    <field name="line_sub_total" sum="Total"/>
+                        </tree>
+                    </field>
+
+    </page>
+
+
+<!--</page>-->
+        <page string="Breakfast " attrs="{'invisible': [('breakfast','=',False)] }">
+
+
+
+        </page>
+
+
+<!--    <page string="lunch "></page>-->
+
+<!--    <page string="dinner "></page>-->
+        <page string="Dinner " attrs="{'invisible': [('dinner','=',False)] }">
+        </page>
+
+<!--        <page string="snacks and drinks "></page>-->
+        <page string="Snacks and Drinks " attrs="{'invisible': [('snacks_and_drinks','=',False)] }">
+        </page>
+
+<!--        <page string="beverages "></page>-->
+        <page string="Beverages " attrs="{'invisible': [('beverages','=',False)] }">
+
+        </page>
+</notebook>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+</odoo>

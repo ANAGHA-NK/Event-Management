@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="s1" model="event.security">
+        <field name="name">Catering</field></record>
+    <record id="s2" model="event.security">
+        <field name="name">Decorations</field></record>
+    <record id="s3" model="event.security">
+        <field name="name">Escort</field></record>
+</odoo>

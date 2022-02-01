@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+<!--    menu1 -->
+    <menuitem id="event_management_menu_root" name="Event Management" >
+        <menuitem id="event_configuration_menu" name="Configuration">
+        <menuitem id="event_property_menu_action" action="event_property_action"/>
+        </menuitem>
+    </menuitem>
+<!--menu2 -->
+
+    <menuitem id="event_event_booking_menu" name="Event Booking" parent="event_management_menu_root" action="event_booking_action"/>
+    <menuitem id="event_event_security_menu" name="Service " parent="event_management.event_configuration_menu" action="event_security_action"/>
+    <menuitem id="event_event_Cateringmenu_menu" name="Catering Menu " parent="event_management.event_configuration_menu" action="event_catmenu_action"/>
+    <menuitem id="event_event_catering_menu" name="Catering " parent="event_management.event_management_menu_root" action="event_catering_action"/>
+
+</odoo>

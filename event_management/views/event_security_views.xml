@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!--    tree view event security-->
+    <record id="event_security_view_tree" model="ir.ui.view">
+        <field name="name">event.security.tree</field>
+        <field name="model">event.security</field>
+        <field name="arch" type="xml">
+            <tree string="Channel">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+<!--    action event security -->
+    <record id="event_security_action" model="ir.actions.act_window">
+        <field name="name">Services</field>
+        <field name="res_model">event.security</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--form view event security-->
+    <record id="event_security_view_form" model="ir.ui.view">
+        <field name="name">event.security.form</field>
+        <field name="model">event.security</field>
+        <field name="arch" type="xml">
+            <form string="Event_security">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="respondsible_person"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page>
+                            <field name="notebook_ids">
+                                <tree>
+                                    <field name="description"/>
+                                    <field name="quantity"/>
+                                    <field name="unit_price"/>
+            <!--                <field name="sub_total"/>-->
+                                    <field name="line_sub_total" sum="Total"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

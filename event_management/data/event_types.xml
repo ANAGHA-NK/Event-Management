@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="et1" model="event.booking">
+        <field name="name">Birthday</field></record>
+    <record id="et2" model="event.booking">
+        <field name="name">Wedding</field></record>
+    <record id="et3" model="event.booking">
+        <field name="name">Anniversary</field></record>
+    <record id="et4" model="event.booking">
+        <field name="name">Inauguration</field></record>
+</odoo>
